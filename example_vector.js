@@ -31,8 +31,8 @@ let V = {
   create: createVector,
 };
 
-let va = V.createVector(2, 3);
-let vb = V.createVector(3, 4);
+let va = V.create(2, 3);
+let vb = V.create(3, 4);
 let vc = V.add(va, vb);
 let vd = V.norm(va);
 vb = V.norm(vb);
