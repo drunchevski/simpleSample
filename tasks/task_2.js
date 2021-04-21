@@ -19,11 +19,11 @@ const legs = {
 };
 
 function outputFunction(el) {
-  return 0;
+  return [el.name, legs[el.specie]];
 }
 
 const outputArray = inp3.map(outputFunction);
 console.log(outputArray);
 
 // console.log(inp4.map((el) => `${id_table[el.id]}${el.name}`));
-// console.log(inp3.map((el) => [el.name, legs[el.specie]]));
+ console.log(inp3.map((el) => [el.name, legs[el.specie]]));

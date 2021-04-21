@@ -11,7 +11,7 @@ function kek() {
 }
 
 //console.log(el);
-console.log(lul());
-console.log(kek());
-console.log(lul());
-console.log(kek());
+console.log(lul());  //30
+console.log(kek());	 //53
+console.log(lul());  //30
+console.log(kek());	 //53

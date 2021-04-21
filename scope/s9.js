@@ -9,9 +9,9 @@ function lul() {
   return kek;
 }
 
-let kekw = lul();
+let kekw = lul(); 
 
+console.log(kekw()); //20
+console.log(kekw()); //30
 console.log(kekw());
-console.log(kekw());
-console.log(kekw());
-console.log(kekw());
+console.log(kekw()); //50

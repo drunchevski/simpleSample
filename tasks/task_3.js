@@ -9,11 +9,16 @@ const inp4 = [
 const id_table = ["dog_", "cat_", "chicken_", "spider_"];
 
 function outputFunction(el) {
-  return 0;
+  return {name:el[0], specie:el[1], id:id_table.indexOf(el[1] + "_")};
 }
 
 const outputArray = inp4.map(outputFunction);
 console.log(outputArray);
+
+
+function outputFunctin(el) {
+  return [el.name, legs[el.specie]];
+}
 
 /*
 outputArray2 = inp4.map((el) => ({

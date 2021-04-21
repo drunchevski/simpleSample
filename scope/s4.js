@@ -6,7 +6,7 @@ function eM() {
   return e1;
 }
 
-console.log(e1);
-console.log(eM());
-console.log(eM());
-console.log(e1);
+console.log(e1);   //10
+console.log(eM()); //20
+console.log(eM()); //20
+console.log(e1);   //10

@@ -7,7 +7,7 @@ const inp2 = [
 ].map((el) => ({ name: el[0], cash: el[1] }));
 
 function outputFunction(el) {
-  return 0;
+  return el.cash;
 }
 
 const outputArray = inp2.map(outputFunction);

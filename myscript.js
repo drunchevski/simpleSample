@@ -1,6 +1,19 @@
 function buttonClicked() {
-  alert("buttonClicked");
+  let suda = document.getElementById('suda');
+//suda.innerHTML = '<img src="pap.gif" alt="this slowpoke moves"  width=250/>'
+
+for (let i =0; i<25; i++) {
+  var node = document.createElement("img");
+
+node.setAttribute('src', 'pap.gif')
+
+node.setAttribute('width', 250)
+suda.appendChild(node);
+  //suda.innerHTML = '<img src="pap.gif" alt="this slowpoke moves"  width=250/>'
 }
+
+}
+
 
 let user_name = "John";
 let user_age = 25;
