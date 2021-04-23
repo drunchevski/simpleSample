@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="mystyle.css" />
+    <!-- <link rel="stylesheet" href="mystyle.css" /> -->
     <script src="myscript.js"></script>
-    
-    
   </head>
   <body>
-    <img src="pap.gif" alt="this slowpoke moves"  width=250/>
-       <div id="suda"></>
-
-
-    <h1>Best Example Heading</h1>
-    <p>Just press this button, dude...</p>
-    <button onclick="buttonClicked()">NOTICE ME, SEMPAAII</button>
+    <h1>ToDo List</h1>
+    <div id="taskList" class="list">
+      <h4 class="task panel" onclick="removeTask(event)">Test 1</h4>
+    </div>
+    <footer id="controls">
+      <input id="taskInput" />
+      <button id="taskSubmit" onclick="addTask()">+</button>
+    </footer>
   </body>
 </html>
