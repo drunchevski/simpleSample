@@ -20,6 +20,8 @@ let gitgut = document.createElement("img");
 let taskInput = document.getElementById("taskInput");
 let task = taskInput.value; 
 let IWidth = task;
+if (IWidth == "" ) IWidth = "150px";
+ 
 let Iheight = "84.3833px"; 
 let massiv = ["pap","papik","papzan","papicio"];
 let Rand = Math.floor(Math.random() *4);
