@@ -1,63 +1,50 @@
-function removeTask(event) {
-  console.log(event);
-  
-  let xXx_Delete_xXx = event.target
-  xXx_Delete_xXx.removeChild(xXx_Delete_xXx.childNodes[0]);
-  console.log(xXx_Delete_xXx);
+let massiv = ["pap.gif", "papicio.gif", "papik.gif", "papzan.gif"];
 
+let droparea = null;
+document.addEventListener("DOMContentLoaded", onDomLoaded);
 
-  let taskText = document.createTextNode("НЫААААААААААААААА");
-  event.target.appendChild(taskText);
-
-  
-  /*let taskList = document.getElementById("taskList");
-  taskList.removeChild(event.target);
- */ 
+function addPapich(imagefile) {
+  let img = imagefile.target.result;
+  massiv.push(img);
+  createAndPushPapich(img);
 }
+
+function consumer(e) {
+  e.preventDefault();
+  let dt = e.dataTransfer;
+  let file = dt.files[0];
+  let reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = addPapich;
+}
+
+function createAndPushPapich(img) {
+  let gitPush = document.getElementById("Pukich");
+  let gitgut = document.createElement("img");
+  let widthInput = document.getElementById("widthInput");
+  let IWidth = widthInput.value;
+  let IHeight = "120px";
+
+  gitgut.setAttribute("src", img);
+  gitgut.setAttribute("height", IHeight);
+  gitgut.setAttribute("width", IWidth);
+  gitPush.appendChild(gitgut);
+  window.scrollTo(0, document.body.scrollHeight);
+}
+
 function PrisivPapicha() {
-let gitPush = document.getElementById("Pukich");
-let gitgut = document.createElement("img");
-let taskInput = document.getElementById("taskInput");
-let task = taskInput.value; 
-let IWidth = task;
-if (IWidth == "" ) IWidth = "150px";
- 
-let Iheight = "84.3833px"; 
-let massiv = ["pap","papik","papzan","papicio"];
-let Rand = Math.floor(Math.random() *4);
-let Randy = massiv[Rand];
-
-gitgut.setAttribute("src", Randy+".gif"); 
-gitgut.setAttribute("width", IWidth); 
-gitgut.setAttribute("height",Iheight)
-gitPush.appendChild(gitgut); 
-//Math.floor(Math.random() * 5); // 0 1 2 3 4
-
+  let Rand = Math.floor(Math.random() * massiv.length);
+  let Randy = massiv[Rand];
+  createAndPushPapich(Randy);
 }
 
-function addTask() {
-  let taskInput = document.getElementById("taskInput");
-  let task = taskInput.value;  
-
-  let taskList = document.getElementById("taskList");
-
-  let taskText = document.createTextNode(task);
-  
-  let taskNode = document.createElement("h4");
-  taskNode.setAttribute("class", "task panel");
-  taskNode.onclick = removeTask;
-  taskNode.appendChild(taskText);
-  taskList.appendChild(taskNode);
+function preventDefault(e) {
+  e.preventDefault();
 }
 
-function buttonClicked() {
-  let suda = document.getElementById("suda");
-  if (!suda) return;
-
-  for (let i = 0; i < 25; i++) {
-    var node = document.createElement("img");
-    node.setAttribute("src", "pap.gif");
-    node.setAttribute("width", 250);
-    suda.appendChild(node);
-  }
+function onDomLoaded() {
+  document.getElementById("consumer").addEventListener("drop", consumer, false);
+  document
+    .getElementById("consumer")
+    .addEventListener("dragover", preventDefault, false);
 }
